@@ -1360,6 +1360,7 @@ class DepositDataSet(APIView):
     http_method_names = ['post']
     
     def post(self, request, *args, **kwargs):
+        lang = DEFAULT_LANG if lang == None else lang
         data_set = request.data["data set"]
         if not data_set:
             return Response({
@@ -1375,3 +1376,69 @@ class DepositDataSet(APIView):
                 data["date"] = new_year
                 data["updated"] = month
             return Response(data_set)
+        
+class OnboardAuthUsersDeposits(ObtainAuthToken):
+    authentication_classes = ()
+    permission_classes = ()
+    http_method_names = ['post']
+
+    def post(self, request, lang, *args, **kwargs):
+        lang = DEFAULT_LANG if lang == None else lang
+        deposits = request.data
+        if len(deposits) <= 0:
+            return Response({
+                "message": "No deposits in this databse",
+                "success": False
+            })
+        else:
+            for deposit in deposits:
+                if not deposit["email"] or not deposit["deposit_amount"] or not deposit["payment_method"] or not deposit["currency"] or not deposit["date"]:
+                    return Response({
+                        'message': "Something is missing",
+                        "type": "required",
+                        'success': False
+                    })
+                else:
+                    email = deposit["email"]
+                    user = _user.getAuthUserByEmail(request,lang,email)
+                    print(user)
+                    _deposit.createDeposits(request,lang,deposit,user)
+            number = len(deposits)
+            return Response({
+                "users": number,
+                "message":"These users have their deposits in order",
+                "success":True
+            })
+            
+class OnboardAuthUsersWithdraws(ObtainAuthToken):
+    authentication_classes = ()
+    permission_classes = ()
+    http_method_names = ['post']
+
+    def post(self, request, lang, *args, **kwargs):
+        lang = DEFAULT_LANG if lang == None else lang
+        withdraws = request.data
+        if len(withdraws) <= 0:
+            return Response({
+                "message": "No withdraw data",
+                "success": False
+            })
+        else:
+            for withdraw in withdraws:
+                if not withdraw["email"] or not withdraw["withdraw"] or not withdraw["date"]:
+                    return Response({
+                        'message': "Something is missing",
+                        "type": "required",
+                        'success': False
+                    })
+                else:
+                    email = withdraw["email"]
+                    user = _user.getAuthUserByEmail(request,lang,email)
+                    print(user)
+                    _withdraw.withdraws(request,lang,withdraw,user)
+            number = len(withdraws)
+            return Response({
+                "users": number,
+                "message":"These users have their withdraws in order",
+                "success":True
+            })

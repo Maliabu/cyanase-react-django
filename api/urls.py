@@ -109,7 +109,9 @@ urlpatterns = [
      path('<str:lang>/email/verify/<str:userid>/',user_view.verifyAccount.as_view(),name = "email-verify"),
     path('<str:lang>/onboard/',user_view.OnboardAuthUsers.as_view(),name = "onboard-users"),
     path('<str:lang>/auth/user/delete/',user_view.DeleteUserAccount.as_view(),name = "delete-user-account"),
-    path('deposit/',views.DepositDataSet.as_view(),name = "deposit-data-set")
+    path('deposit/',views.DepositDataSet.as_view(),name = "deposit-data-set"),
+    path('<str:lang>/users/deposits/',views.OnboardAuthUsersDeposits.as_view(),name = "all-user-deposits"),
+    path('<str:lang>/users/withdraws/',views.OnboardAuthUsersWithdraws.as_view(),name = "all-user-withdraws")
 ]
 urlpatterns = urlpatterns + \
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

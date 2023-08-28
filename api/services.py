@@ -235,6 +235,7 @@ class Deposits:
         depo = []
         totalDepositUGX = 0
         totalDepositUSD = 0
+        networth = 0
         userid = request.user.id
         ddeposits = Deposit.objects.filter(user_id=userid)
         for deposit in ddeposits:
@@ -247,6 +248,7 @@ class Deposits:
                     totalUSD += amount
                     totalDepositAmount += amount
             depositid = deposit.pk
+            networth = deposit.networth
             deposits.append({
                 "user":deposit.user.username,
                 "user_id":deposit.user.id,
@@ -257,6 +259,7 @@ class Deposits:
                 "investment_option":deposit.investment_option,
                 "currency": deposit.currency,
                 "account_type": deposit.account_type.pk,
+                "networth":deposit.networth,
                 "created": deposit.created.strftime("%d %b"),
             })
             options.append(deposit.investment_option)
@@ -274,7 +277,7 @@ class Deposits:
                 # dates.append((str(amount.created))[0:10])
         # myData = list({names["name"]:names for names in depo}.values())
         # deposits.sort(reverse=True)
-        return totalDepositUGX,totalDepositUSD,totalUGX,totalUSD,depo,dates,deposits,goalDepositsUGX
+        return totalDepositUGX,totalDepositUSD,totalUGX,totalUSD,depo,dates,deposits,goalDepositsUGX,networth
     
     def depositToGoal(self,request,lang,user,goalid,txRef):
         current_datetime = datetime.datetime.now()
@@ -340,11 +343,13 @@ class Deposits:
     def createDeposit(self, request, lang, user,txRef):
         current_datetime = datetime.datetime.now()
         payment_means = request.data["payment_means"]
-        deposit_category = request.data["deposit_category"]
+        # deposit_category = request.data["deposit_category"]
+        deposit_category = "personal"
         deposit_amount = request.data["deposit_amount"]
         investment_option = request.data["investment_option"]
         currency = request.data["currency"]
-        account_type = request.data["account_type"]
+        # account_type = request.data["account_type"]
+        account_type = "basic"
         reference = request.data["reference"]
         reference_id = request.data["reference_id"]
         txRef = txRef
@@ -387,6 +392,50 @@ class Deposits:
         else:
             return{
                 "message": "your account is not verified, please check your email and verify",
+                "success": False
+            }
+    
+    def createDeposits(self, request, lang, deposit, user):
+        payment_means = "online"
+        deposit_category = "personal"
+        deposit_amount = deposit["deposit_amount"]
+        investment_option = "Cash | Credit | Venture"
+        currency = deposit["currency"]
+        networth = deposit["networth"]
+        created = deposit["date"]
+        account_type = "basic"
+        reference = "TEST"
+        reference_id = 0
+        txRef = "CYANASE_TEST"
+        userid = user["user_id"]
+        account_type = AccountType.objects.filter(code_name=account_type).get()
+        deposit = Deposit.objects.create(
+                deposit_amount=float(deposit_amount),
+                payment_means=payment_means,
+                user=User(pk=int(userid)),
+                deposit_category=deposit_category,
+                investment_option=investment_option,
+                currency=currency,
+                account_type=account_type,
+                reference=reference,
+                reference_id=reference_id,
+                txRef=txRef,
+                created=created,
+                networth=float(networth)
+            )
+        deposit.save()
+            # # get deposit id
+        depositid = deposit.id
+            # # Get the user making the deposit by id
+        deposit = self.getDeopsitById(request, lang, depositid)
+        if deposit:
+            return {
+                "message": f"Yeap deposits are in",
+                "success": True
+            }
+        else:
+            return{
+                "message": "something went terribly wrong",
                 "success": False
             }
 
@@ -894,6 +943,33 @@ class Withdraws:
         # _type = "account" | "mobilemoney"
         r = requests.get("https://api.flutterwave.com/v3/transfers/fee?amount="+withdraw_amount+"&currency="+currency+"&type="+_type,auth=BearerAuth(BEARER_INVESTORS)).json()
         return r["data"][0]["fee"]
+    
+    def withdraws(self,request,lang,withdraw,user):
+        withdraw_channel = "bank"
+        withdraw_amount = withdraw["withdraw"]
+        userid = user["user_id"]
+        currency = "UGX"
+        account_type = "personal"
+        created = withdraw["date"]
+        account_type = "basic"
+        account_type = AccountType.objects.filter(code_name=account_type).get()
+        status = "successful"
+        withdraw = Withdraw.objects.create(
+                    withdraw_channel=withdraw_channel,
+                    withdraw_amount=float(withdraw_amount),
+                    currency=currency,
+                    account_type=account_type,
+                    user=User(pk=int(userid)),
+                    created=created,
+                    status=status
+                )
+        withdrawid = withdraw.id
+        withdraw.save()
+        wwithdraw = self.getWithdrawById(request,lang,withdrawid)
+        return{
+                    "message": f"ohhh yeah",
+                    "success": True
+                }
             
 class BearerAuth(requests.auth.AuthBase):
         

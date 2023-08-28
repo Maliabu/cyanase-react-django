@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from datetime import date
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
 
 
 class SupportedLanguage(models.Model):
@@ -76,7 +77,8 @@ class UserProfile(models.Model):
     is_verified = models.BooleanField(default=False)
     is_deleted = models.BooleanField(default=True)
     is_disabled = models.BooleanField(default=False)
-    created = models.DateTimeField(auto_now_add=True)
+    # created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return "%s" % self.user
@@ -388,11 +390,13 @@ class Deposit(models.Model):
     payment_means = models.CharField(max_length=200, null=True)
     deposit_category = models.CharField(max_length=200, null=True)
     deposit_amount = models.BigIntegerField(default=0)
+    networth = models.BigIntegerField(default=0)
     currency = models.CharField(max_length=200, default='UGX')
     account_type = models.ForeignKey(AccountType, on_delete=models.DO_NOTHING)
     investment_option = models.CharField(max_length=200, default="risk_analysis")
     goal = models.ForeignKey(Goal, on_delete=models.CASCADE, null=True, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    # created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(default=timezone.now())
     reference = models.CharField(max_length=200,default="")
     reference_id = models.IntegerField(default=0)
     txRef = models.CharField(max_length=200)
@@ -407,10 +411,11 @@ class Withdraw(models.Model):
     withdraw_amount = models.BigIntegerField(default=0)
     currency = models.CharField(max_length=200, default='UGX')
     account_type = models.ForeignKey(AccountType, on_delete=models.DO_NOTHING)
-    created = models.DateTimeField(auto_now_add=True)
+    # created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(default=timezone.now())
     goal = models.ForeignKey(Goal, on_delete=models.CASCADE, null=True, blank=True)
-    transaction = models.ForeignKey(BankTransaction, on_delete=models.CASCADE)
-    status = models.CharField(max_length=200,default="")
+    # transaction = models.ForeignKey(BankTransaction, on_delete=models.CASCADE)
+    status = models.CharField(max_length=200,default="successful")
 
     def __str__(self):
         return "%s - %s" % (self.user, self.withdraw_amount)

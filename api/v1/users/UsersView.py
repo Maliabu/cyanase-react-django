@@ -562,7 +562,6 @@ class OnboardAuthUsers(ObtainAuthToken):
                         'success': False
                     })
                 else:
-                    print(user)
                     _user.onboardUsers(request, lang,user)
             number = len(users)
             return Response({

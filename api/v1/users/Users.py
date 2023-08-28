@@ -206,6 +206,10 @@ class Users:
         results = []
         User = get_user_model()
         users = User.objects.all()
+        User.objects.update(
+            is_active = True
+        )
+        print("Yeap, i activated them all for you Patricia coz you're awesome :)")
         for user in users:
             userid = user.pk
             profile = UserProfile.objects.get(user=User(pk=userid))
@@ -573,7 +577,7 @@ class Users:
         return True
     
     def onboardUsers(self, request, lang,user):
-        current_datetime = user["profile"]["created"]
+        created = user["profile"]["created"]
         first_name = user["first_name"]
         email = user["email"]
         username = user["email"]
@@ -600,7 +604,7 @@ class Users:
         uuser.userprofile.birth_date = None if not birth_date else birth_date
         uuser.userprofile.country = None if not country else country
         uuser.userprofile.profile_picture = profile_picture
-        uuser.userprofile.last_modified = current_datetime
+        uuser.userprofile.created = created
         uuser.userprofile.is_verified = is_verified
         uuser.save()
         userss = self.getAuthUserById(request, lang, userid)
