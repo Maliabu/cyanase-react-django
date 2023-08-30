@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load render_bundle from webpack_loader %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
     <title>Cyanase</title>
 </head>
 <body>
-    <h2>Cynase UI code will be built here</h2>
+    <h2 id="app"></h2>
+    {% render_bundle 'webapp' %}
 </body>
 </html>

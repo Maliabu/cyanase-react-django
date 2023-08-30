@@ -40,7 +40,15 @@ INSTALLED_APPS = [
     "django_user_agents",
     "realtime",
     "webapp",
+    "webpack_loader",
 ]
+
+WEBPACK_LOADER = {
+  "DEFAULT": {
+    "BUNDLE_DIR_NAME": "webapp/",
+    "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats.json")
+  }
+}
 
 SITE_ID = 1
 
@@ -111,22 +119,33 @@ EMAIL_HOST_PASSWORD = "support@cyanase"
 # # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-        "sql_mode": "traditional",
-    }
     # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    #     "sql_mode": "traditional",
+    # },
+    #  "default": {
     #     "ENGINE": "django.db.backends.mysql",
     #     "OPTIONS": {
     #         "init_command": "ALTER DATABASE cyanase CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci",
     #     },
     #     "NAME": "cyanase",
-    #     "USER": "cyanase",
-    #     "PASSWORD": "Udbz.xC638L)BiE",
-    #     "HOST": "127.0.0.1",
-    #     "PORT": "3306",
-    # }
+        # "USER": "root",
+        # "PASSWORD": "K62&5ben",
+        # "HOST": "127.0.0.1",
+        # "PORT": "3306",
+    # },
+     "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "OPTIONS": {
+            "init_command": "ALTER DATABASE cyanase CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci",
+        },
+        "NAME": "cyanase",
+        "USER": "root",
+        "PASSWORD": "root",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+    }
 }
 
 

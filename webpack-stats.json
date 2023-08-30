@@ -1,0 +1,131 @@
+{
+  "status": "done",
+  "assets": {
+    "0ce299fb919a0c183914177d3f00bb0b.png": {
+      "name": "0ce299fb919a0c183914177d3f00bb0b.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/0ce299fb919a0c183914177d3f00bb0b.png",
+      "publicPath": "static/images/0ce299fb919a0c183914177d3f00bb0b.png"
+    },
+    "0e7dcbd065cb45af8362db1309ea0f54.png": {
+      "name": "0e7dcbd065cb45af8362db1309ea0f54.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/0e7dcbd065cb45af8362db1309ea0f54.png",
+      "publicPath": "static/images/0e7dcbd065cb45af8362db1309ea0f54.png"
+    },
+    "0f3ce8f9c46a4d0e6de2.png": {
+      "name": "0f3ce8f9c46a4d0e6de2.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/0f3ce8f9c46a4d0e6de2.png",
+      "publicPath": "static/images/0f3ce8f9c46a4d0e6de2.png"
+    },
+    "1491a53f16724028f6c0abbd76d4bf4f.jpeg": {
+      "name": "1491a53f16724028f6c0abbd76d4bf4f.jpeg",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/1491a53f16724028f6c0abbd76d4bf4f.jpeg",
+      "publicPath": "static/images/1491a53f16724028f6c0abbd76d4bf4f.jpeg"
+    },
+    "17feaf8088532297f036af5b44c9c87b.png": {
+      "name": "17feaf8088532297f036af5b44c9c87b.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/17feaf8088532297f036af5b44c9c87b.png",
+      "publicPath": "static/images/17feaf8088532297f036af5b44c9c87b.png"
+    },
+    "1c2d7046f902063309d66f4b20f83537.png": {
+      "name": "1c2d7046f902063309d66f4b20f83537.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/1c2d7046f902063309d66f4b20f83537.png",
+      "publicPath": "static/images/1c2d7046f902063309d66f4b20f83537.png"
+    },
+    "2a1373742ab875d99637a3919cbbd037.png": {
+      "name": "2a1373742ab875d99637a3919cbbd037.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/2a1373742ab875d99637a3919cbbd037.png",
+      "publicPath": "static/images/2a1373742ab875d99637a3919cbbd037.png"
+    },
+    "32e7735cc4da7494be72194ab556a74f.png": {
+      "name": "32e7735cc4da7494be72194ab556a74f.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/32e7735cc4da7494be72194ab556a74f.png",
+      "publicPath": "static/images/32e7735cc4da7494be72194ab556a74f.png"
+    },
+    "55aecec6f82254abeef4.png": {
+      "name": "55aecec6f82254abeef4.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/55aecec6f82254abeef4.png",
+      "publicPath": "static/images/55aecec6f82254abeef4.png"
+    },
+    "607ef34ab950dc810b2b73ce656c4888.png": {
+      "name": "607ef34ab950dc810b2b73ce656c4888.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/607ef34ab950dc810b2b73ce656c4888.png",
+      "publicPath": "static/images/607ef34ab950dc810b2b73ce656c4888.png"
+    },
+    "6668e0c2d5debdb228c0a043c7000430.png": {
+      "name": "6668e0c2d5debdb228c0a043c7000430.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/6668e0c2d5debdb228c0a043c7000430.png",
+      "publicPath": "static/images/6668e0c2d5debdb228c0a043c7000430.png"
+    },
+    "7365db816a573786d54bb3825509f6e5.png": {
+      "name": "7365db816a573786d54bb3825509f6e5.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/7365db816a573786d54bb3825509f6e5.png",
+      "publicPath": "static/images/7365db816a573786d54bb3825509f6e5.png"
+    },
+    "770b84d8b5ff742c099b20de9cb531ce.png": {
+      "name": "770b84d8b5ff742c099b20de9cb531ce.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/770b84d8b5ff742c099b20de9cb531ce.png",
+      "publicPath": "static/images/770b84d8b5ff742c099b20de9cb531ce.png"
+    },
+    "7aa784adb2a8bcaf3e12393126f6465c.png": {
+      "name": "7aa784adb2a8bcaf3e12393126f6465c.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/7aa784adb2a8bcaf3e12393126f6465c.png",
+      "publicPath": "static/images/7aa784adb2a8bcaf3e12393126f6465c.png"
+    },
+    "870250e478ea80d1efc4fba374d22b5d.png": {
+      "name": "870250e478ea80d1efc4fba374d22b5d.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/870250e478ea80d1efc4fba374d22b5d.png",
+      "publicPath": "static/images/870250e478ea80d1efc4fba374d22b5d.png"
+    },
+    "94ce377f289c07115d7dbf90c318ba7f.png": {
+      "name": "94ce377f289c07115d7dbf90c318ba7f.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/94ce377f289c07115d7dbf90c318ba7f.png",
+      "publicPath": "static/images/94ce377f289c07115d7dbf90c318ba7f.png"
+    },
+    "984f032d15d4ea01b93b.jpeg": {
+      "name": "984f032d15d4ea01b93b.jpeg",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/984f032d15d4ea01b93b.jpeg",
+      "publicPath": "static/images/984f032d15d4ea01b93b.jpeg"
+    },
+    "be35747ef68da4f3f61328da2da4ee08.png": {
+      "name": "be35747ef68da4f3f61328da2da4ee08.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/be35747ef68da4f3f61328da2da4ee08.png",
+      "publicPath": "static/images/be35747ef68da4f3f61328da2da4ee08.png"
+    },
+    "f2f4fd183d246c0cf68fd548ae7547b0.png": {
+      "name": "f2f4fd183d246c0cf68fd548ae7547b0.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/f2f4fd183d246c0cf68fd548ae7547b0.png",
+      "publicPath": "static/images/f2f4fd183d246c0cf68fd548ae7547b0.png"
+    },
+    "fe6663e21e99b036d0256c522cfc2820.png": {
+      "name": "fe6663e21e99b036d0256c522cfc2820.png",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/fe6663e21e99b036d0256c522cfc2820.png",
+      "publicPath": "static/images/fe6663e21e99b036d0256c522cfc2820.png"
+    },
+    "node_modules_web-vitals_dist_web-vitals_js-0f956047447a1020fbc9.js": {
+      "name": "node_modules_web-vitals_dist_web-vitals_js-0f956047447a1020fbc9.js",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/node_modules_web-vitals_dist_web-vitals_js-0f956047447a1020fbc9.js",
+      "publicPath": "static/images/node_modules_web-vitals_dist_web-vitals_js-0f956047447a1020fbc9.js"
+    },
+    "node_modules_web-vitals_dist_web-vitals_js-ffefc6d9d98e6bf4b980.js": {
+      "name": "node_modules_web-vitals_dist_web-vitals_js-ffefc6d9d98e6bf4b980.js",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/node_modules_web-vitals_dist_web-vitals_js-ffefc6d9d98e6bf4b980.js",
+      "publicPath": "static/images/node_modules_web-vitals_dist_web-vitals_js-ffefc6d9d98e6bf4b980.js"
+    },
+    "webapp-0f956047447a1020fbc9.js": {
+      "name": "webapp-0f956047447a1020fbc9.js",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/webapp-0f956047447a1020fbc9.js",
+      "publicPath": "static/images/webapp-0f956047447a1020fbc9.js"
+    },
+    "webapp-ffefc6d9d98e6bf4b980.js": {
+      "name": "webapp-ffefc6d9d98e6bf4b980.js",
+      "path": "/Applications/MAMP/htdocs/cyanase/webapp/static/images/webapp-ffefc6d9d98e6bf4b980.js",
+      "publicPath": "static/images/webapp-ffefc6d9d98e6bf4b980.js"
+    }
+  },
+  "chunks": {
+    "webapp": [
+      "webapp-0f956047447a1020fbc9.js"
+    ]
+  },
+  "publicPath": "static/images/"
+}
